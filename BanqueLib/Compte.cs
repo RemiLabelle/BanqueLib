@@ -20,21 +20,21 @@ namespace BanqueLib
         #endregion
         #region ----- constructeurs -----
 
-        public Compte(int numero, string detenteur, decimal solde = 0, StatutCompte statut = StatutCompte.Ok)
+        public Compte(int Numéro, string Détenteur, decimal Solde = 0, StatutCompte Statut = StatutCompte.Ok)
         {
-            if (numero <= 0)
-                throw new ArgumentOutOfRangeException(message: $"Numéro ('{numero}') must be a non-negative and non-zero value.", paramName: "Numéro", actualValue: numero);
-            this._numCompte = numero;
+            if (Numéro <= 0)
+                throw new ArgumentOutOfRangeException(message: $"Numéro ('{Numéro}') must be a non-negative and non-zero value.", paramName: "Numéro", actualValue: Numéro);
+            this._numCompte = Numéro;
 
-            SetDétenteur(detenteur);
+            SetDétenteur(Détenteur);
 
-            if ((((solde % 1) * 100) % 1) != 0)
-                throw new ArgumentOutOfRangeException(message: $"Solde ('{solde}') must be equal to '0.00'.", paramName: "Solde", actualValue: solde);
-            if (solde < 0)
-                throw new ArgumentOutOfRangeException(message: $"Solde ('{solde}') must a non-negative value.", paramName: "Solde", actualValue: solde);
-            this._solde = solde;
+            if ((((Solde % 1) * 100) % 1) != 0)
+                throw new ArgumentOutOfRangeException(message: $"Solde ('{Solde}') must be equal to '0.00'.", paramName: "Solde", actualValue: Solde);
+            if (Solde < 0)
+                throw new ArgumentOutOfRangeException(message: $"Solde ('{Solde}') must a non-negative value.", paramName: "Solde", actualValue: Solde);
+            this._solde = Solde;
 
-            this._statut = statut;
+            this._statut = Statut;
 
             this._estGele
                 = this._statut == StatutCompte.Ok ? false

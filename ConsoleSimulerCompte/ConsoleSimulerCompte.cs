@@ -1,7 +1,14 @@
 ﻿using BanqueLib;
 using System.Reflection.Metadata.Ecma335;
+using System.Text.Json.Nodes;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.IO;
 
-Compte compte = new Compte(new Random().Next(100, 1000), "Rémi Labelle");
+//deserialize
+string dataFile = "Compte.json";
+
+Compte compte = LoadCompte(dataFile);
 
 while (true)
 {
@@ -36,7 +43,7 @@ while (true)
             {
                 Console.WriteLine("** Peut déposer ? " + (compte.PeutDéposer() ? "Oui." : "Non."));
             }
-            catch (ArgumentOutOfRangeException) 
+            catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("** Peut déposer ? Non.");
             }
@@ -47,11 +54,11 @@ while (true)
             {
                 Console.WriteLine("** Peut retirer ? " + (compte.PeutRetirer() ? "Oui." : "Non."));
             }
-            catch (ArgumentOutOfRangeException) 
+            catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("** Peut retirer ? Non.");
             }
-            
+
             break;
         case '4':
 
@@ -61,11 +68,11 @@ while (true)
             {
                 Console.WriteLine($"** Peut retirer {_:C2}? " + (compte.PeutRetirer(_) ? "Oui." : "Non."));
             }
-            catch (ArgumentOutOfRangeException) 
+            catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine($"** Peut retirer {_:C2} ? Non.");
             }
-            
+
             break;
         case '5':
 
@@ -80,7 +87,7 @@ while (true)
             {
                 Console.WriteLine($"** Impossible de déposer {_:C2}.");
             }
-            
+
             break;
         case '6':
 
@@ -91,18 +98,18 @@ while (true)
                 compte.Retirer(_);
                 Console.WriteLine($"** Retrait de {_:C2}.");
             }
-            catch (InvalidOperationException) 
+            catch (InvalidOperationException)
             {
                 Console.WriteLine($"** Impossible de retirer {_:C2}.");
             }
-            
+
             break;
         case '7':
             try
             {
                 Console.WriteLine($"** Retrait complet de {compte.Vider():C2}.");
             }
-            catch (InvalidOperationException) 
+            catch (InvalidOperationException)
             {
                 Console.WriteLine("** Impossible de vider un compte vide ou gelé.");
             }
@@ -113,7 +120,7 @@ while (true)
             {
                 Console.WriteLine("** Impossible de geler un compte déjà gelé.");
             }
-            else 
+            else
             {
                 compte.Geler();
                 Console.WriteLine("** Le compte a été gelé.");
@@ -131,16 +138,46 @@ while (true)
             }
             break;
         case 'q':
-            Environment.Exit(0); 
+
+            SaveCompte(compte, dataFile);
+
+            Environment.Exit(0);
             break;
         case 'r':
             compte = new Compte(new Random().Next(100, 1000), "Rémi Labelle");
-            Console.WriteLine("Un nouveau compte a été créé.");
+            Console.WriteLine(" Un nouveau compte a été créé.");
             break;
         default:
-            Console.WriteLine(" Mauvais choix."); 
+            Console.WriteLine(" Mauvais choix.");
             break;
     }
     Console.WriteLine("\n Appuyer sur ENTER pour continuer...");
     Console.ReadLine();
+}
+;
+
+void SaveCompte(Compte compte, string data)
+{
+    File.WriteAllText(data, JsonSerializer.Serialize(compte, new JsonSerializerOptions { WriteIndented = true }));
+}
+
+Compte LoadCompte(string data)
+{
+    if (File.Exists(data))
+    {
+        string rawData = File.ReadAllText(data);
+
+        if (!string.IsNullOrWhiteSpace(rawData))
+        {
+            return JsonSerializer.Deserialize<Compte>(rawData);
+        }
+        else
+        {
+            return new Compte(new Random().Next(100, 1000), "Rémi Labelle");
+        }
+    }
+    else
+    {
+        return new Compte(new Random().Next(100, 1000), "Rémi Labelle");
+    }
 }

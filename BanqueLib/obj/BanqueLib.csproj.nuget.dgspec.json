@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mjose\\Downloads\\2A6_Banque_2025\\BanqueLib\\BanqueLib.csproj": {}
+    "C:\\Users\\mjose\\Downloads\\TP_3\\BanqueLib\\BanqueLib\\BanqueLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mjose\\Downloads\\2A6_Banque_2025\\BanqueLib\\BanqueLib.csproj": {
+    "C:\\Users\\mjose\\Downloads\\TP_3\\BanqueLib\\BanqueLib\\BanqueLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mjose\\Downloads\\2A6_Banque_2025\\BanqueLib\\BanqueLib.csproj",
+        "projectUniqueName": "C:\\Users\\mjose\\Downloads\\TP_3\\BanqueLib\\BanqueLib\\BanqueLib.csproj",
         "projectName": "BanqueLib",
-        "projectPath": "C:\\Users\\mjose\\Downloads\\2A6_Banque_2025\\BanqueLib\\BanqueLib.csproj",
+        "projectPath": "C:\\Users\\mjose\\Downloads\\TP_3\\BanqueLib\\BanqueLib\\BanqueLib.csproj",
         "packagesPath": "C:\\Users\\mjose\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mjose\\Downloads\\2A6_Banque_2025\\BanqueLib\\obj\\",
+        "outputPath": "C:\\Users\\mjose\\Downloads\\TP_3\\BanqueLib\\BanqueLib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
