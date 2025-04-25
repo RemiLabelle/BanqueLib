@@ -19,6 +19,10 @@
       "RelativeMoniker": "D:0:0:{084A9662-7BA5-4BB3-8F31-8AE33E0071BB}|ConsoleSimulerCompte\\ConsoleSimulerCompte.csproj|solutionrelative:consolesimulercompte\\consolesimulercompte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{52270A88-8871-44AE-88B3-95E296725C1F}|WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj|c:\\users\\6327999\\documents\\github\\banquelib\\winformssimulercompte\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52270A88-8871-44AE-88B3-95E296725C1F}|WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj|solutionrelative:winformssimulercompte\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8B1F6810-06D3-47D3-827D-B6456A5CCE3D}|BanqueLib\\BanqueLib.csproj|c:\\users\\6327999\\documents\\github\\banquelib\\banquelib\\compte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8B1F6810-06D3-47D3-827D-B6456A5CCE3D}|BanqueLib\\BanqueLib.csproj|solutionrelative:banquelib\\compte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,11 +38,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\Program.cs",
+              "RelativeDocumentMoniker": "WinFormsSimulerCompte\\Program.cs",
+              "ToolTip": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\Program.cs",
+              "RelativeToolTip": "WinFormsSimulerCompte\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T15:25:29.851Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,7 +65,7 @@
               "RelativeDocumentMoniker": "WinFormsSimulerCompte\\Form1.Designer.cs",
               "ToolTip": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\Form1.Designer.cs",
               "RelativeToolTip": "WinFormsSimulerCompte\\Form1.Designer.cs",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAqwJoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAqwFMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T14:48:45.196Z",
               "EditorCaption": ""
@@ -61,7 +78,7 @@
               "RelativeDocumentMoniker": "WinFormsSimulerCompte\\Form1.cs",
               "ToolTip": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\Form1.cs",
               "RelativeToolTip": "WinFormsSimulerCompte\\Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T14:48:30.15Z",
               "EditorCaption": ""
@@ -86,13 +103,14 @@
               "RelativeDocumentMoniker": "ConsoleSimulerCompte\\ConsoleSimulerCompte.cs",
               "ToolTip": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\ConsoleSimulerCompte\\ConsoleSimulerCompte.cs",
               "RelativeToolTip": "ConsoleSimulerCompte\\ConsoleSimulerCompte.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAqwKsAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T14:44:47.715Z"
+              "WhenOpened": "2025-03-21T14:44:47.715Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ConsoleTesterCompte.cs",
               "DocumentMoniker": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\ConsoleTesterCompte\\ConsoleTesterCompte.cs",
               "RelativeDocumentMoniker": "ConsoleTesterCompte\\ConsoleTesterCompte.cs",
@@ -100,19 +118,21 @@
               "RelativeToolTip": "ConsoleTesterCompte\\ConsoleTesterCompte.cs",
               "ViewState": "AgIAAIQAAAAAAAAAAAAAAMUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T07:49:25.929Z"
+              "WhenOpened": "2025-03-21T07:49:25.929Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Compte.cs",
               "DocumentMoniker": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\Compte.cs",
               "RelativeDocumentMoniker": "BanqueLib\\Compte.cs",
               "ToolTip": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\Compte.cs",
               "RelativeToolTip": "BanqueLib\\Compte.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAkwJ0AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T15:19:31.802Z"
+              "WhenOpened": "2025-03-14T15:19:31.802Z",
+              "EditorCaption": ""
             }
           ]
         }

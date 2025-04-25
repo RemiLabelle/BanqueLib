@@ -30,9 +30,9 @@
         {
             GroupBoxData = new GroupBox();
             CheckBoxGele = new CheckBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            TextBoxSolde = new TextBox();
+            TextBoxDetenteur = new TextBox();
+            TextBoxNumero = new TextBox();
             LabelSolde = new Label();
             LabelDetenteur = new Label();
             LabelNumero = new Label();
@@ -57,9 +57,9 @@
             // GroupBoxData
             // 
             GroupBoxData.Controls.Add(CheckBoxGele);
-            GroupBoxData.Controls.Add(textBox3);
-            GroupBoxData.Controls.Add(textBox2);
-            GroupBoxData.Controls.Add(textBox1);
+            GroupBoxData.Controls.Add(TextBoxSolde);
+            GroupBoxData.Controls.Add(TextBoxDetenteur);
+            GroupBoxData.Controls.Add(TextBoxNumero);
             GroupBoxData.Controls.Add(LabelSolde);
             GroupBoxData.Controls.Add(LabelDetenteur);
             GroupBoxData.Controls.Add(LabelNumero);
@@ -81,30 +81,31 @@
             CheckBoxGele.TabIndex = 6;
             CheckBoxGele.Text = "Gelé";
             CheckBoxGele.UseVisualStyleBackColor = true;
+            CheckBoxGele.Click += CheckBoxGele_Clicked;
             // 
-            // textBox3
+            // TextBoxSolde
             // 
-            textBox3.Location = new Point(118, 108);
-            textBox3.Name = "textBox3";
-            textBox3.ReadOnly = true;
-            textBox3.Size = new Size(198, 25);
-            textBox3.TabIndex = 5;
+            TextBoxSolde.Location = new Point(118, 108);
+            TextBoxSolde.Name = "TextBoxSolde";
+            TextBoxSolde.ReadOnly = true;
+            TextBoxSolde.Size = new Size(198, 25);
+            TextBoxSolde.TabIndex = 5;
             // 
-            // textBox2
+            // TextBoxDetenteur
             // 
-            textBox2.Font = new Font("Segoe UI", 10F);
-            textBox2.Location = new Point(118, 70);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(198, 25);
-            textBox2.TabIndex = 4;
+            TextBoxDetenteur.Font = new Font("Segoe UI", 10F);
+            TextBoxDetenteur.Location = new Point(118, 70);
+            TextBoxDetenteur.Name = "TextBoxDetenteur";
+            TextBoxDetenteur.Size = new Size(198, 25);
+            TextBoxDetenteur.TabIndex = 4;
             // 
-            // textBox1
+            // TextBoxNumero
             // 
-            textBox1.Location = new Point(118, 32);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(100, 25);
-            textBox1.TabIndex = 3;
+            TextBoxNumero.Location = new Point(118, 32);
+            TextBoxNumero.Name = "TextBoxNumero";
+            TextBoxNumero.ReadOnly = true;
+            TextBoxNumero.Size = new Size(100, 25);
+            TextBoxNumero.TabIndex = 3;
             // 
             // LabelSolde
             // 
@@ -236,7 +237,7 @@
             // 
             // TextBoxLog
             // 
-            TextBoxLog.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TextBoxLog.Anchor = AnchorStyles.Bottom;
             TextBoxLog.Font = new Font("Segoe UI", 10F);
             TextBoxLog.Location = new Point(12, 283);
             TextBoxLog.Multiline = true;
@@ -316,9 +317,9 @@
         private Label LabelDetenteur;
         private Label LabelNumero;
         private Label LabelSolde;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox TextBoxSolde;
+        private TextBox TextBoxDetenteur;
+        private TextBox TextBoxNumero;
         private NumericUpDown NumericUpDownMontant;
         private RadioButton RadioButton4;
         private RadioButton RadioButton3;

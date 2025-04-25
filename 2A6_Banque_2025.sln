@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSimulerCompte", "ConsoleSimulerCompte\ConsoleSimulerCompte.csproj", "{084A9662-7BA5-4BB3-8F31-8AE33E0071BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsSimulerCompte", "WinFormsSimulerCompte\WinFormsSimulerCompte.csproj", "{52270A88-8871-44AE-88B3-95E296725C1F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8B1F6810-06D3-47D3-827D-B6456A5CCE3D} = {8B1F6810-06D3-47D3-827D-B6456A5CCE3D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
