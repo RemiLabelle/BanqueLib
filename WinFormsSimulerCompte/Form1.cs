@@ -5,6 +5,8 @@ namespace WinFormsSimulerCompte
         public Form1()
         {
             InitializeComponent();
+            Text += "Rémi Labelle";
         }
+
     }
 }
