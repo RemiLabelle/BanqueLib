@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj": {}
+    "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj": {}
   },
   "projects": {
-    "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\BanqueLib.csproj": {
+    "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\BanqueLib\\BanqueLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\BanqueLib.csproj",
+        "projectUniqueName": "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\BanqueLib\\BanqueLib.csproj",
         "projectName": "BanqueLib",
-        "projectPath": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\BanqueLib.csproj",
-        "packagesPath": "C:\\Users\\6327999\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\obj\\",
+        "projectPath": "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\BanqueLib\\BanqueLib.csproj",
+        "packagesPath": "C:\\Users\\mjose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\BanqueLib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\6327999\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mjose\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -65,24 +65,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj": {
+    "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj",
+        "projectUniqueName": "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj",
         "projectName": "WinFormsSimulerCompte",
-        "projectPath": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj",
-        "packagesPath": "C:\\Users\\6327999\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\WinFormsSimulerCompte\\obj\\",
+        "projectPath": "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\WinFormsSimulerCompte\\WinFormsSimulerCompte.csproj",
+        "packagesPath": "C:\\Users\\mjose\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\WinFormsSimulerCompte\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\6327999\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mjose\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -97,8 +97,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\BanqueLib.csproj": {
-                "projectPath": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\BanqueLib.csproj"
+              "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\BanqueLib\\BanqueLib.csproj": {
+                "projectPath": "C:\\Users\\mjose\\OneDrive\\Bureau\\BanqueLib\\BanqueLib\\BanqueLib.csproj"
               }
             }
           }
@@ -113,7 +113,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0-windows7.0": {
@@ -137,7 +137,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

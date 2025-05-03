@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "BanqueLib\\Banque.cs",
               "ToolTip": "C:\\Users\\6327999\\Documents\\GitHub\\BanqueLib\\BanqueLib\\Banque.cs",
               "RelativeToolTip": "BanqueLib\\Banque.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwFsAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-28T18:29:34.184Z",
               "EditorCaption": ""
@@ -143,8 +143,7 @@
               "RelativeToolTip": "BanqueLib\\Compte.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAAAAwAsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T15:19:31.802Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T15:19:31.802Z"
             }
           ]
         }
