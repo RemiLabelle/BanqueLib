@@ -1,73 +1,106 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BanqueLib
 {
-    internal class Banque
+    public class Banque
     {
         #region champs
 
         private string _nom;
-        private IReadOnlyList<Compte> _comptes = null;
-        private int _prochainNumero = 0;
+        private IReadOnlyList<Compte>? _comptes = null;
+        private int _prochainNumero = 1;
 
         #endregion
-        #region constructeur
+        #region constructeurs
 
-        public Banque(string nom, int prochainNumero = 0, List<Compte>? comptesList = null, Compte[]? comptesArray = null) 
+        public Banque(string nom, int prochainNumero, IReadOnlyList<Compte>? comptes = null) 
+        {
+            ArgumentException.ThrowIfNullOrWhiteSpace(nom);
+            this._nom = nom;
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(prochainNumero);
+            if (comptes == null) 
+            {
+                this._prochainNumero = prochainNumero;
+            }
+            else
+            {
+                for (int i = 0; i < comptes.Count; i++)
+                {
+                    ArgumentNullException.ThrowIfNull(comptes[i]);
+
+                    for (int j = 0; j < comptes.Count; j++)
+                    {
+                        if (comptes[j] != null)
+                        {
+                            if (comptes[i].Numéro == comptes[j].Numéro && i != j)
+                                throw new ArgumentException();
+
+                            if ((comptes[i].Numéro < comptes[j].Numéro && i > j) || (comptes[i].Numéro > comptes[j].Numéro && i < j))
+                            {
+                                Compte[] tempComptes = comptes.ToArray();
+                                Compte tempCompte = comptes[i];
+
+                                tempComptes[i] = comptes[j];
+                                tempComptes[j] = tempCompte;
+
+                                comptes = tempComptes;
+                            }
+                        }
+                    }
+                }
+
+                this._comptes = comptes;
+
+                this._prochainNumero = Comptes[Comptes.Count - 1].Numéro + 1;
+                ArgumentOutOfRangeException.ThrowIfGreaterThanOrEqual(ProchainNuméro, prochainNumero);
+            }
+        }
+
+        public Banque(string nom, IReadOnlyList<Compte>? comptes = null)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(nom);
             this._nom = nom;
 
-            if (comptesList == null && comptesArray == null)
+            if (comptes != null)
             {
-                this._prochainNumero = 
-                    prochainNumero == 0 ? 
-                    this._prochainNumero++ 
-                    : this._prochainNumero = prochainNumero;
+                for (int i = 0; i < comptes.Count; i++)
+                {
+                    ArgumentNullException.ThrowIfNull(comptes[i]);
+
+                    for (int j = 0; j < comptes.Count; j++)
+                    {
+                        if (comptes[j] != null) 
+                        {
+                            if (comptes[i].Numéro == comptes[j].Numéro && i != j)
+                                throw new ArgumentException();
+
+                            if ((comptes[i].Numéro < comptes[j].Numéro && i > j) || (comptes[i].Numéro > comptes[j].Numéro && i < j))
+                            {
+                                Compte[] tempComptes = comptes.ToArray();
+                                Compte tempCompte = comptes[i];
+
+                                tempComptes[i] = comptes[j];
+                                tempComptes[j] = tempCompte;
+
+                                comptes = tempComptes;
+                            }
+                        }
+                    }
+                }
+
+                this._comptes = comptes;
+
+                this._prochainNumero = Comptes[Comptes.Count - 1].Numéro + 1;
             }
             else
             {
-                if (comptesList == null)
-                {
-                    foreach (Compte compte in comptesArray) 
-                    {
-                        ArgumentNullException.ThrowIfNull(compte);
-
-                        foreach (Compte compareCompte in comptesArray) 
-                        {
-                            if (compte.Numéro == compareCompte.Numéro)
-                                throw new ArgumentException();
-                        }
-                    }
-
-                    this._comptes = comptesArray;
-                }
-                else
-                {
-                    foreach (Compte compte in comptesList)
-                    {
-                        ArgumentNullException.ThrowIfNull(compte);
-
-                        foreach (Compte compareCompte in comptesList) 
-                        {
-                            if (compte.Numéro == compareCompte.Numéro)
-                                throw new ArgumentException();
-                        }
-                    }
-
-                    this._comptes = comptesList;
-                }
-
-                Array.Sort(_comptes.ToArray());
-
-                this._prochainNumero = 
-                    prochainNumero == 0 ? 
-                    this._prochainNumero = _comptes[_comptes.Count - 1].Numéro + 1 
-                    : this._prochainNumero = prochainNumero;
+                this._prochainNumero = ProchainNuméro;
             }
         }
 
@@ -83,19 +116,33 @@ namespace BanqueLib
 
         public int NombreDeComptes() 
         {
-            return this._comptes.Count;
+            if (Comptes != null)
+            {
+                return Comptes.Count;
+            }
+            else 
+            {
+                return 0;
+            }
         }
 
         public decimal TotalDesDépôts() 
         {
-            decimal total = 0;
-
-            foreach (Compte compte in this._comptes) 
+            if (Comptes != null)
             {
-                total += compte.Solde;
-            }
+                decimal total = 0;
 
-            return total;
+                foreach (Compte compte in Comptes)
+                {
+                    total += compte.Solde;
+                }
+
+                return total;
+            }
+            else 
+            {
+                return 0;
+            }
         }
 
         public string DescriptionSommaire()
@@ -117,19 +164,19 @@ namespace BanqueLib
                         output += Nom;
                         j += Nom.Length - 1;
                     }
-                    else if (i == 4 && j == 7)
+                    else if (i == 4 && j == 5)
                     {
                         string txt = $"Prochain Numéro:  {ProchainNuméro}";
                         output += txt;
                         j += (txt.Length - 1);
                     }
-                    else if (i == 5 && j == 7)
+                    else if (i == 5 && j == 3)
                     {
                         string txt = $"Nombre de Comptes:  {NombreDeComptes()}";
                         output += txt;
                         j += (txt.Length - 1);
                     }
-                    else if (i == 6 && j == 7)
+                    else if (i == 6 && j == 4)
                     {
                         string txt = $"Total des Dépôts:  {TotalDesDépôts():C2}";
                         output += txt;
@@ -154,23 +201,38 @@ namespace BanqueLib
             return output;
         }
 
-        public string DescriptionDesComptes() //finir allignement
+        public string DescriptionDesComptes()
         {
             string output = "";
 
-            for (int i = 0; i < Comptes.Count; i++)
+            if (Comptes != null)
             {
-                output += "[RL] ";
+                for (int i = 0; i < Comptes.Count; i++)
+                {
+                    output += "[RL]  ";
 
-                output += $"#{Comptes[i].Numéro}";
+                    output += $"#{Comptes[i].Numéro}";
+                    for (int j = 0; j < 16 - Comptes[i].Numéro.ToString().Length; j++) 
+                    {
+                        output += " ";
+                    }
 
-                output += Comptes[i].Détenteur;
+                    output += Comptes[i].Détenteur;
+                    for (int j = 0; j < 30 - Comptes[i].Solde.ToString("C2").Length - Comptes[i].Détenteur.Length; j++)
+                    {
+                        output += " ";
+                    }
 
-                output += $"{Comptes[i].Solde:C2}";
+                    output += $"{Comptes[i].Solde:C2}";
+                    for (int j = 0; j < 3; j++)
+                    {
+                        output += " ";
+                    }
 
-                output += Comptes[i].Statut.ToString();
+                    output += Comptes[i].Statut.ToString();
 
-                output += "\n";
+                    output += "\n\n";
+                }
             }
 
             return output;
@@ -181,35 +243,95 @@ namespace BanqueLib
             return DescriptionSommaire() + "\n\n" + DescriptionDesComptes();
         }
 
-        public Compte? ChercherCompte(int numeroCompte) //finir
+        public Compte? ChercherCompte(int numeroCompte)
         {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(numeroCompte);
+
+            foreach (Compte compte in Comptes) 
+            {
+                if (compte.Numéro == numeroCompte)
+                {
+                    return compte;
+                }
+            }
+
             return null;
         }
 
-        public bool PeutSupprimerCompte(Compte compte) //finir
+        public bool PeutSupprimerCompte(Compte compte)
         {
-            return false;
+            ArgumentNullException.ThrowIfNull(compte);
+
+            if (compte.EstGelé || compte.Solde != 0)
+            {
+                return false;
+            }
+            else
+            {
+                foreach (Compte compareCompte in Comptes) 
+                {
+                    if (compte.Equals(compareCompte))
+                        return true;
+                }
+
+                return false;
+            }
         }
-        public bool PeutSupprimerCompte(int numeroCompte) //finir
+        public bool PeutSupprimerCompte(int numeroCompte)
         {
+            ArgumentOutOfRangeException.ThrowIfNegativeOrZero(numeroCompte);
+
+            foreach (Compte compte in Comptes) 
+            {
+                if (compte.Numéro == numeroCompte)
+                {
+                    return PeutSupprimerCompte(compte);
+                }
+            }
+
             return false;
         }
 
         #endregion
         #region méthodes modifiantes
 
-        public Compte CréerCompte(string detenteur) //finir
+        public Compte CréerCompte(string detenteur)
         {
-            return null;
+            List<Compte> tempList = Comptes.ToList();
+            Compte newUser = new Compte(ProchainNuméro, detenteur);
+
+            tempList.Add(newUser);
+            this._comptes = tempList;
+            this._prochainNumero++;
+
+            return newUser;
         }
 
-        public void SupprimerCompte(Compte compte) //finir
+        public void SupprimerCompte(Compte compte)
         {
-            
+            if (PeutSupprimerCompte(compte))
+            {
+                List<Compte> tempList = Comptes.ToList();
+                tempList.Remove(compte);
+                this._comptes = tempList;
+            }
+            else 
+            {
+                throw new ArgumentException();
+            }
         }
-        public void SupprimerCompte(int numeroCompte) //finir
+        public void SupprimerCompte(int numeroCompte)
         {
-
+            if (PeutSupprimerCompte(numeroCompte))
+            {
+                List<Compte> tempList = Comptes.ToList();
+                tempList.Remove(ChercherCompte(numeroCompte));
+                this._comptes = tempList;
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
         }
 
         #endregion
