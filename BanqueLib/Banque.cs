@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BanqueLib
@@ -19,6 +20,7 @@ namespace BanqueLib
         #endregion
         #region constructeurs
 
+        
         public Banque(string nom, int prochainNumero, IReadOnlyList<Compte>? comptes = null) 
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(nom);
@@ -62,6 +64,7 @@ namespace BanqueLib
             }
         }
 
+        [JsonConstructor]
         public Banque(string nom, IReadOnlyList<Compte>? comptes = null)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(nom);
@@ -297,7 +300,13 @@ namespace BanqueLib
 
         public Compte CréerCompte(string detenteur)
         {
-            List<Compte> tempList = Comptes.ToList();
+            List<Compte> tempList = new List<Compte>();
+
+            if (Comptes != null)
+            {
+                tempList = Comptes.ToList();
+            }
+            
             Compte newUser = new Compte(ProchainNuméro, detenteur);
 
             tempList.Add(newUser);

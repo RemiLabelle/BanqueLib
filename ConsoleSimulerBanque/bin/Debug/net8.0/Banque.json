@@ -1,0 +1,20 @@
+{
+  "Nom": "Remi Labelle Banking Co.",
+  "Comptes": [
+    {
+      "Num\u00E9ro": 1,
+      "D\u00E9tenteur": "Remi Labelle 770",
+      "Solde": 28.48,
+      "EstGel\u00E9": true,
+      "Statut": 1
+    },
+    {
+      "Num\u00E9ro": 5,
+      "D\u00E9tenteur": "Remi Labelle 384",
+      "Solde": 80.09,
+      "EstGel\u00E9": true,
+      "Statut": 1
+    }
+  ],
+  "ProchainNum\u00E9ro": 6
+}
